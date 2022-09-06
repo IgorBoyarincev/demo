@@ -1,13 +1,13 @@
 public class ManagerSales {
-    protected int[] sales;
+    protected long[] sales;
 
-    public ManagerSales(int[] sales) {
+    public ManagerSales(long[] sales) {
         this.sales = sales;
     }
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (max < sale) {
                 max = sale;
             }
@@ -15,9 +15,9 @@ public class ManagerSales {
         return max;
     }
 
-    private int min() {
-        int min = Integer.MAX_VALUE;
-        for (int sale : sales) {
+    private long min() {
+        long min = Long.MAX_VALUE;
+        for (long sale : sales) {
             if (min > sale) {
                 min = sale;
             }
@@ -25,9 +25,9 @@ public class ManagerSales {
         return min;
     }
 
-    public int cutAverage() {
+    public long cutAverage() {
         int sum = 0;
-        for (int sale : sales) {
+        for (long sale : sales) {
             sum += sale;
         }
         return (sum - min() - max()) / (sales.length - 2);
